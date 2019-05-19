@@ -1,10 +1,44 @@
+const path = require('path');
+
 module.exports = {
     siteMetadata: {
         title: `Grzegorz Sieczkowski`,
-        description: `Grzegorz Sieczkowski personal page`,
+        description: `Grzegorz Sieczkowski personal site`,
         author: `@gskgrek`,
     },
     plugins: [
+        {
+            resolve: 'gatsby-plugin-root-import',
+            options: {
+                assets: path.join(__dirname, 'src/assets'),
+                components: path.join(__dirname, 'src/components'),
+                pages: path.join(__dirname, 'src/pages'),
+                sections: path.join(__dirname, 'src/sections'),
+                utils: path.join(__dirname, 'src/utils'),
+                src: path.join(__dirname, 'src'),
+            },
+        },
+        {
+            resolve: `gatsby-plugin-styled-components`,
+            options: {
+                displayName: true,
+            },
+        },
+        {
+            resolve: 'gatsby-plugin-eslint',
+            options: {
+                test: /\.js$/,
+                exclude: /(node_modules|cache|public)/,
+                options: {
+                    emitWarning: true,
+                    failOnError: false,
+                },
+            },
+        },
+        {
+            resolve: 'gatsby-plugin-stylelint',
+            options: { files: ['**/*.js'] },
+        },
         `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-source-filesystem`,
