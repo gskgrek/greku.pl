@@ -19,6 +19,12 @@ module.exports = {
             },
         },
         {
+            resolve: 'gatsby-plugin-sass',
+            options: {
+                data: `@import "./src/styles/math";`,
+            },
+        },
+        {
             resolve: `gatsby-plugin-styled-components`,
             options: {
                 displayName: true,
@@ -55,10 +61,12 @@ module.exports = {
                 name: `gatsby-starter-default`,
                 short_name: `starter`,
                 start_url: `/`,
-                background_color: `#663399`,
-                theme_color: `#663399`,
+                background_color: `#FFFFFF`,
+                theme_color: `#FFFFFF`,
                 display: `minimal-ui`,
-                icon: `src/assets/images/gatsby-icon.png`, // This path is relative to the root of the site.
+                stripMetadata: true,
+                defaultQuality: 70,
+                icon: `src/assets/images/logo.png`, // This path is relative to the root of the site.
             },
         },
         // this (optional) plugin enables Progressive Web App + Offline functionality

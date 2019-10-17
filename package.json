@@ -11,10 +11,12 @@
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-offline": "^2.1.1",
     "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sass": "^2.1.20",
     "gatsby-plugin-sharp": "^2.0.37",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-source-filesystem": "^2.0.36",
     "gatsby-transformer-sharp": "^2.1.19",
+    "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -39,6 +41,7 @@
     "stylelint-config-recommended": "^2.2.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.7.0",
+    "stylelint-scss": "^3.11.1",
     "stylelint-webpack-plugin": "^0.10.5"
   },
   "keywords": [
