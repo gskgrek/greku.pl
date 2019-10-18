@@ -1,4 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap&subset=latin-ext');
+
+*{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+*, *:hover, *:focus{
+    outline: none !important;
+    box-sizing: border-box;
+}
+:root{
+    font-size: 62.5%;
+}
 body, html{
     padding: 0;
     margin: 0;
+    width: 100%;
+}
+body{
+    font-family: $font-family-base;
+    font-weight: $font-weight-regular;
+    font-size: 1.6rem;
+    line-height: normal;
+    background: $body-bg;
+    color: $color-primary;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    &.no-scroll{
+        overflow: hidden;
+        @media (min-width: 768px){
+            padding-right: 17px;
+        }
+    }
+}
+
+section, header, footer{
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+a, a:visited, .dropdown-item{
+    text-decoration: none;
+    color: $color-link;
+    outline: none !important;
+    transition: color 0.2s;
+}
+a:hover, a:focus, a.active, .dropdown-item:hover, .dropdown-item:focus, .dropdown-item.active{
+    text-decoration: none;
+    color: $color-link-hover;
+    outline: none !important;
+    //text-shadow: 0 0 .001px $color-link-hover;
+    background: none;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+}
+b{
+    font-weight: 700;
+}
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+button{
+    cursor: pointer;
+    font-family: $font-family-base;
+}
+
+textarea{
+    resize: none;
+}
+
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+
+.text-bold{
+    font-weight: $font-weight-bold;
+}
+
+.text-accent{
+    color: $color-accent;
+}
+.text-secondary{
+    color: $color-secondary;
+}
+.text-secondary-accent{
+    color: $color-secondary-accent;
+}
+.text-third-accent{
+    color: $color-third-accent;
+}
+
+.font-thin{
+    font-weight: $font-weight-thin;
+}
+.font-light{
+    font-weight: $font-weight-light;
+}
+.font-normal, .font-regular{
+    font-weight: $font-weight-normal;
+}
+.font-medium{
+    font-weight: $font-weight-medium;
+}
+.font-semibold{
+    font-weight: $font-weight-semibold;
+}
+.font-bold{
+    font-weight: $font-weight-bold;
+}
+.font-extra-bold{
+    font-weight: $font-weight-extra-bold;
+}
+.font-black{
+    font-weight: $font-weight-black;
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+.img-fluid{
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+.container{
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    position: relative;
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import css from './experience.module.scss';
 
 const experience = () => {
-    return <div className={css.experience}>EXPERIENCE</div>;
+    return <section className={css.experience}>EXPERIENCE</section>;
 };
 
 export default experience;

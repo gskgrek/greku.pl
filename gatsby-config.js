@@ -21,7 +21,8 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-sass',
             options: {
-                data: `@import "./src/styles/math";`,
+                includePaths: ['./src/styles'],
+                data: `@import "./src/styles/global";`,
             },
         },
         {

@@ -3,7 +3,7 @@ import React from 'react';
 import css from './education.module.scss';
 
 const education = () => {
-    return <div className={css.education}>EDUCATION</div>;
+    return <section className={css.education}>EDUCATION</section>;
 };
 
 export default education;
