@@ -11,8 +11,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        
+
         &__avatar{
+            width: 132px;
+            height: 132px;
             margin: auto;
             border-radius: 50%;
             overflow: hidden;

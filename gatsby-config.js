@@ -46,7 +46,8 @@ module.exports = {
             resolve: 'gatsby-plugin-stylelint',
             options: { files: ['**/*.js'] },
         },
-        `gatsby-plugin-react-helmet`,
+        `gatsby-transformer-sharp`,
+        `gatsby-plugin-sharp`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -54,8 +55,7 @@ module.exports = {
                 path: `${__dirname}/src/assets/images`,
             },
         },
-        `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
+        `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
