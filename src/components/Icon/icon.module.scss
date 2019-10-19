@@ -1,0 +1,37 @@
+.icon{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    &--vue{
+        background: #FFFFFF url('../../static/images/ico_vue.svg') no-repeat center 55%;
+        background-size: 62% auto;
+    }
+
+    &--react{
+        background: #000000 url('../../static/images/ico_react.svg') no-repeat center center;
+        background-size: 77% auto;
+    }
+
+    &--css3{
+        background: #379AD6 url('../../static/images/ico_css3.svg') no-repeat center center;
+        background-size: 40% auto;
+    }
+
+    &--html5{
+        background: #F16529 url('../../static/images/ico_html5.svg') no-repeat center center;
+        background-size: 40% auto;
+    }
+
+    &--js{
+        background: #F7DF1E url('../../static/images/ico_js.svg') no-repeat center center;
+        background-size: 100% auto;
+    }
+
+    &--laravel{
+        background: #FFFFFF url('../../static/images/ico_laravel.svg') no-repeat center center;
+        background-size: 62% auto;
+    }
+
+}
