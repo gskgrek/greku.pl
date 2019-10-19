@@ -1,3 +1,44 @@
 .projects{
     height: 320px;
+
+    .slider{
+        background: #00FF00;
+
+        &__item{
+            padding: 0 40px;
+
+            > div{
+                background: #FF0000;
+            }
+        }
+
+        &__prev{
+            left: 10px;
+            z-index: 10;
+
+            &::before{
+                color: #977ED3;
+            }
+        }
+
+        &__next{
+            left: auto;
+            right: 10px;
+            z-index: 10;
+
+            &::before{
+                color: #FF8A5E;
+            }
+        }
+
+    }
+
+    @media (max-width: 680px){
+        .slider{
+            &__item{
+                padding: 0;
+            }
+        }
+    }
+
 }

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import CircleMenu from '../components/Navigation/CircleMenu/CircleMenu';
 import Header from '../sections/Header/Header';
@@ -12,7 +12,7 @@ import './index.scss';
 
 const IndexPage = () => {
     return (
-        <Fragment>
+        <div className="app">
             <CircleMenu />
 
             <Header />
@@ -28,7 +28,7 @@ const IndexPage = () => {
             </main>
 
             <Footer />
-        </Fragment>
+        </div>
     );
 };
 
