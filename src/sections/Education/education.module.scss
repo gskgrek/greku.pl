@@ -1,3 +1,15 @@
 .education{
+    color: #FFFFFF;
 
+    &:before{
+        content: '';
+        position: absolute;
+        left: -5%;
+        top: 0;
+        display: block;
+        width: 110%;
+        height: 100%;
+        background: #FF8A5E;
+        transform: rotate(5deg);
+    }
 }

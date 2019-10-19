@@ -5,7 +5,9 @@ import css from './education.module.scss';
 const education = () => {
     return (
         <section className={css.education}>
-            <h2>Education</h2>
+            <div className="container">
+                <h2>Education</h2>
+            </div>
         </section>
     );
 };

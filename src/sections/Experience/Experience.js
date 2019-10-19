@@ -5,7 +5,9 @@ import css from './experience.module.scss';
 const experience = () => {
     return (
         <section className={css.experience}>
-            <h2>Commercial experience</h2>
+            <div className="container">
+                <h2>Commercial experience</h2>
+            </div>
         </section>
     );
 };
