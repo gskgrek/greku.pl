@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import Slider from 'react-slick';
 
+import ProjectsItem from './ProjectsItem';
 import withWindowResizeHandler from '../../hoc/WithWindowResizeHandler/WithWindowResizeHandler';
 
 import 'slick-carousel/slick/slick.css';
@@ -44,40 +46,41 @@ const projects = props => {
         ],
     };
 
+    const list = useStaticQuery(graphql`
+        query ProjectsListQuery {
+            allMarkdownRemark {
+                totalCount
+                edges {
+                    node {
+                        frontmatter {
+                            id
+                            title
+                            for
+                            range
+                            techstack
+                            thumb {
+                                publicURL
+                                childImageSharp {
+                                    fluid(maxWidth: 600, quality: 70) {
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `).allMarkdownRemark.edges.map(item => {
+        return <ProjectsItem key={item.node.frontmatter.id} data={item.node.frontmatter} />;
+    });
+
     return (
         <section className={css.projects}>
             <h2>Projects</h2>
 
             <Slider className={css.slider} {...slider_settings}>
-                <div>
-                    <div className={css.slider__item}>
-                        <div>slide 1</div>
-                    </div>
-                </div>
-
-                <div>
-                    <div className={css.slider__item}>
-                        <div>slide 2</div>
-                    </div>
-                </div>
-
-                <div>
-                    <div className={css.slider__item}>
-                        <div>slide 3</div>
-                    </div>
-                </div>
-
-                <div>
-                    <div className={css.slider__item}>
-                        <div>slide 4</div>
-                    </div>
-                </div>
-
-                <div>
-                    <div className={css.slider__item}>
-                        <div>slide 5</div>
-                    </div>
-                </div>
+                {list}
             </Slider>
         </section>
     );

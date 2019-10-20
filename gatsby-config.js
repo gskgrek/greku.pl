@@ -18,6 +18,8 @@ module.exports = {
                 src: path.join(__dirname, 'src'),
             },
         },
+
+        // styles
         {
             resolve: 'gatsby-plugin-sass',
             options: {
@@ -31,6 +33,8 @@ module.exports = {
                 displayName: true,
             },
         },
+
+        // linters
         {
             resolve: 'gatsby-plugin-eslint',
             options: {
@@ -46,6 +50,8 @@ module.exports = {
             resolve: 'gatsby-plugin-stylelint',
             options: { files: ['**/*.js'] },
         },
+
+        // images
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {
@@ -55,6 +61,30 @@ module.exports = {
                 path: `${__dirname}/src/assets/images`,
             },
         },
+
+        // markdown
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `markdown-projects`,
+                path: `${__dirname}/src/markdown/projects`,
+            },
+        },
+        {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+                plugins: [
+                    {
+                        resolve: `gatsby-remark-images`,
+                        options: {
+                            maxWidth: 1920,
+                        },
+                    },
+                ],
+            },
+        },
+
+        // document head
         `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-plugin-manifest`,
