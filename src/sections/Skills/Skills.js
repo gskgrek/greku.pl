@@ -8,6 +8,27 @@ const skills = () => {
             <div className={['container', css.container].join(' ')}>
                 <h2>Skills</h2>
                 Lorem ipsum
+                <br />
+                Lorem ipsum
+                <br />
+                Lorem ipsum
+                <br />
+                Lorem ipsum
+                <br />
+                Lorem ipsum
+                <br />
+                Lorem ipsum
+                <br />
+                Lorem ipsum
+                <br />
+                Lorem ipsum
+                <br />
+                Lorem ipsum
+                <br />
+                Lorem ipsum
+                <br />
+                Lorem ipsum
+                <br />
             </div>
         </section>
     );

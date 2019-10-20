@@ -1,3 +1,13 @@
 .footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 290px;
+    padding: 0 16px;
 
+    p{
+        width: 510px;
+        max-width: 100%;
+        text-align: center;
+    }
 }
