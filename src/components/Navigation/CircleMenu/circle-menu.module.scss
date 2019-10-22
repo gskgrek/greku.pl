@@ -10,11 +10,14 @@
     }
 
     svg {
+        width: 500px;
+        height: 100vh;
         position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        right: -60px;
+        bottom: -60px;
+        transform: translate(0, 0);
         z-index: -1;
+        pointer-events: none;
     }
 
     input {
@@ -89,8 +92,8 @@
 
     &__list {
         position: absolute;
-        left: 50%;
-        top: 50%;
+        right: 0;
+        bottom: 0;
         margin: 0;
         padding: 0;
         list-style: none;
@@ -98,22 +101,39 @@
     }
 
     &__link {
+        border: none;
+        background: none;
+        margin-left: auto;
         display: flex;
         width: 40px;
         height: 40px;
         justify-content: center;
         align-items: center;
         transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+        cursor: pointer;
+    }
+
+    &__content{
+        display: block;
+        background: #FFFFFF;
+        width: 80vw;
+        height: 80vh;
+        max-width: 0;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        transition: max-width 0.2s ease-in-out, max-height 0.2s ease-in-out, padding 0.2s ease-in-out;
     }
 
     &__item {
         position: absolute;
-        left: 0;
-        top: 0;
+        right: 0;
+        bottom: 0;
         display: block;
         border-radius: 50%;
-        transform: translate(-50%, -50%) scale(1);
-        transition: left 0.75s cubic-bezier(.87, -.41, .19, 1.44), top 0.75s cubic-bezier(.87, -.41, .19, 1.44);
+        overflow: hidden;
+        transform: scale(1);
+        transition: right 0.75s cubic-bezier(.87, -.41, .19, 1.44), bottom 0.75s cubic-bezier(.87, -.41, .19, 1.44), border-radius 0.2s ease-in-out;
 
         &:hover {
             .circle-menu__link {
@@ -129,27 +149,58 @@
         }
 
         &--green {
-            background: #41B883 url('./ico_home.svg') no-repeat center center;
-            background-size: 50% 50%;
+            background: #41B883;
+
+            .circle-menu__link {
+                background: url('./ico_home.svg') no-repeat center center;
+                background-size: 50% 50%;
+            }
         }
 
         &--blue {
-            background: #379AD6 url('./ico_user.svg') no-repeat center center;
-            background-size: 50% 50%;
+            background: #379AD6;
+
+            .circle-menu__link {
+                background: url('./ico_user.svg') no-repeat center center;
+                background-size: 50% 50%;
+            }
         }
 
         &--yellow {
-            background: #F7DF1E url('./ico_screen.svg') no-repeat center center;
-            background-size: 50% 50%;
+            background: #F7DF1E;
+
+            .circle-menu__link {
+                background: url('./ico_screen.svg') no-repeat center center;
+                background-size: 50% 50%;
+            }
         }
 
-        &--orange {
-            background: #F16529 url('./ico_envelope.svg') no-repeat center center;
-            background-size: 50% 50%;
+        &--orange, &--orange .circle-menu__content {
+            background: #F16529;
+
+            .circle-menu__link {
+                background: url('./ico_envelope.svg') no-repeat center center;
+                background-size: 50% 50%;
+            }
+        }
+
+        &--active{
+            border-radius: 20px;
+            transition-delay: 0s !important;
+
+            .circle-menu__link {
+                width: 50px;
+                height: 50px;
+            }
+            .circle-menu__content{
+                max-width: 300px;
+                max-height: 300px;
+                padding: 16px;
+            }
         }
 
     }
-
+    
     input:checked {
         ~ .circle-menu__toggle {
             transform: scale(1);
@@ -175,8 +226,12 @@
             .circle-menu__item {
                 @for $i from 0 through 5 {
                     &:nth-child( #{$i+1} ) {
-                        left: (60px * sin($i * 55deg - 210deg));
-                        top: (60px * cos($i * 55deg - 210deg));
+                        right: (-60px * sin($i * 55deg - 210deg));
+                        bottom: (-60px * cos($i * 55deg - 210deg));
+                        &:hover, &--active{
+                            right: (-5px - 60px * sin($i * 55deg - 210deg));
+                            bottom: (-5px - 60px * cos($i * 55deg - 210deg));
+                        }
                     }
                 }
             }

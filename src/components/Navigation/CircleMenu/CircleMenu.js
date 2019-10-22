@@ -3,6 +3,8 @@ import React from 'react';
 import css from './circle-menu.module.scss';
 
 const circleMenu = () => {
+    const [isContactActive, setContactActive] = React.useState(false);
+
     return (
         <nav className={css.circleMenu}>
             <input id="circle-menu-toggler" type="checkbox" />
@@ -19,9 +21,9 @@ const circleMenu = () => {
                     {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
                     <a className={css.circleMenu__link} href="http://google.pl" />
                 </li>
-                <li className={[css.circleMenu__item, css.circleMenu__itemOrange].join(' ')}>
-                    {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
-                    <a className={css.circleMenu__link} href="http://google.pl" />
+                <li className={[css.circleMenu__item, css.circleMenu__itemOrange, isContactActive ? css.circleMenu__itemActive : ''].join(' ')}>
+                    <div className={css.circleMenu__content}>Lorem ipsum</div>
+                    <button type="button" className={css.circleMenu__link} onClick={() => setContactActive(!isContactActive)} onKeyDown={() => null} />
                 </li>
             </ul>
 
