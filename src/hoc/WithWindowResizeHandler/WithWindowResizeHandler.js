@@ -1,11 +1,14 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 const withWindowResizeHandler = WrappedComponent => {
     return class component extends Component {
-        state = {
-            width: document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth || window.innerWidth,
-            height: document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight || window.innerHeight,
-        };
+        constructor(props) {
+            super(props);
+            this.state = {
+                width: document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth || window.innerWidth,
+                height: document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight || window.innerHeight,
+            };
+        }
 
         componentDidMount() {
             window.addEventListener('resize', this.onResizeHandler);
@@ -24,10 +27,12 @@ const withWindowResizeHandler = WrappedComponent => {
 
         render() {
             const { width, height } = this.state;
+            const { ...passThroughProps } = this.props;
+
             return (
-                <Fragment>
-                    <WrappedComponent {...this.props} windowWidth={width} windowHeight={height} />
-                </Fragment>
+                <>
+                    <WrappedComponent {...passThroughProps} windowWidth={width} windowHeight={height} />
+                </>
             );
         }
     };

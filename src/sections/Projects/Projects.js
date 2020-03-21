@@ -13,25 +13,25 @@ import css from './projects.module.scss';
 
 function SliderNextArrow(props) {
     const { customClass, className, style, onClick } = props;
-    return <button className={[customClass, className].join(' ')} style={{ ...style }} onClick={onClick} type="button" />;
+    return <button aria-label="Next" className={[customClass, className].join(' ')} style={{ ...style }} onClick={onClick} type="button" />;
 }
 
 function SliderPrevArrow(props) {
     const { customClass, className, style, onClick } = props;
-    return <button className={[customClass, className].join(' ')} style={{ ...style }} onClick={onClick} type="button" />;
+    return <button aria-label="Previous" className={[customClass, className].join(' ')} style={{ ...style }} onClick={onClick} type="button" />;
 }
 
 const projects = props => {
     const { windowWidth } = props;
 
-    const slider_settings = {
+    const sliderSettings = {
         dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: ((windowWidth - 680) >> 1) + 'px',
+        centerPadding: `${Math.round((windowWidth - 680) / 2)}px`,
         prevArrow: <SliderPrevArrow customClass={css.slider__prev} />,
         nextArrow: <SliderNextArrow customClass={css.slider__next} />,
         responsive: [
@@ -79,7 +79,7 @@ const projects = props => {
         <section className={css.projects}>
             <h2>Projects</h2>
 
-            <Slider className={css.slider} {...slider_settings}>
+            <Slider className={css.slider} {...sliderSettings}>
                 {list}
             </Slider>
         </section>

@@ -30,6 +30,9 @@
             "required": {
                 "some": [ "nesting", "id"  ]
             }
+        }],
+        "react/jsx-props-no-spreading": ["error", {
+            "custom": "ignore"
         }]
     }
 }

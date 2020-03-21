@@ -11,19 +11,19 @@ const circleMenu = () => {
             <ul className={css.circleMenu__list}>
                 <li className={[css.circleMenu__item, css.circleMenu__itemGreen].join(' ')}>
                     {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
-                    <a className={css.circleMenu__link} href="http://google.pl" />
+                    <a className={css.circleMenu__link} aria-label="Home" href="http://google.pl" />
                 </li>
                 <li className={[css.circleMenu__item, css.circleMenu__itemBlue].join(' ')}>
                     {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
-                    <a className={css.circleMenu__link} href="http://google.pl" />
+                    <a className={css.circleMenu__link} aria-label="Profile" href="http://google.pl" />
                 </li>
                 <li className={[css.circleMenu__item, css.circleMenu__itemYellow].join(' ')}>
                     {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
-                    <a className={css.circleMenu__link} href="http://google.pl" />
+                    <a className={css.circleMenu__link} aria-label="Projects" href="http://google.pl" />
                 </li>
                 <li className={[css.circleMenu__item, css.circleMenu__itemOrange, isContactActive ? css.circleMenu__itemActive : ''].join(' ')}>
                     <div className={css.circleMenu__content}>Lorem ipsum</div>
-                    <button type="button" className={css.circleMenu__link} onClick={() => setContactActive(!isContactActive)} onKeyDown={() => null} />
+                    <button type="button" aria-label="Contact" className={css.circleMenu__link} onClick={() => setContactActive(!isContactActive)} onKeyDown={() => null} />
                 </li>
             </ul>
 
