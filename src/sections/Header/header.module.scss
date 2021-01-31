@@ -39,6 +39,7 @@
 
         &__icon{
             position: absolute;
+            box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.4);
 
             &:nth-child(1){
                 left: -54px;

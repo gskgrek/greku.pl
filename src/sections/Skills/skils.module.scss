@@ -61,11 +61,13 @@
         .icon{
             flex: 0 0 48px;
             align-self: flex-start;
+            box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.4);
             transform: translateX(-50%);
-            transition: transform 0.2s ease-in-out;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 
             &:hover{
                 transform: translateX(-50%) scale(1.2);
+                box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2);
             }
         }
 
