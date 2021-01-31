@@ -1,13 +1,14 @@
 .experience{
     color: #FFFFFF;
+    z-index: 10;
 
     &:before{
         content: '';
         position: absolute;
-        left: 0;
+        left: -25%;
         top: 0;
         display: block;
-        width: 110%;
+        width: 150%;
         height: 100%;
         background: #FF8A5E;
         transform: translateX(-5%) rotate(5deg);

@@ -10,7 +10,7 @@ const skills = () => (
 
             <ul className={css.set}>
                 <li>
-                    <Icon className={css.icon} type="html5" /> 9 years experience in front-end development
+                    <Icon className={css.icon} type="html5" /> 10 years experience in front-end development
                 </li>
                 <li>
                     <Icon className={css.icon} type="css3" /> Working for advertisement studios, software houses and individual clients
