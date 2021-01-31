@@ -10,16 +10,19 @@ const circleMenu = () => {
             <input id="circle-menu-toggler" type="checkbox" />
             <ul className={css.circleMenu__list}>
                 <li className={[css.circleMenu__item, css.circleMenu__itemGreen].join(' ')}>
-                    {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
-                    <a className={css.circleMenu__link} title="Home" aria-label="Home" href="http://google.pl" />
+                    <a className={css.circleMenu__link} title="Home" aria-label="Home" href="http://google.pl">
+                        Home
+                    </a>
                 </li>
                 <li className={[css.circleMenu__item, css.circleMenu__itemBlue].join(' ')}>
-                    {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
-                    <a className={css.circleMenu__link} title="Profile" aria-label="Profile" href="http://google.pl" />
+                    <a className={css.circleMenu__link} title="Profile" aria-label="Profile" href="http://google.pl">
+                        Profile
+                    </a>
                 </li>
                 <li className={[css.circleMenu__item, css.circleMenu__itemYellow].join(' ')}>
-                    {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
-                    <a className={css.circleMenu__link} title="Projects" aria-label="Projects" href="http://google.pl" />
+                    <a className={css.circleMenu__link} title="Projects" aria-label="Projects" href="http://google.pl">
+                        Projects
+                    </a>
                 </li>
                 <li className={[css.circleMenu__item, css.circleMenu__itemOrange, isContactActive ? css.circleMenu__itemActive : ''].join(' ')}>
                     <div className={css.circleMenu__content}>Lorem ipsum</div>
@@ -27,12 +30,11 @@ const circleMenu = () => {
                 </li>
             </ul>
 
-            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label htmlFor="circle-menu-toggler" className={css.circleMenu__toggle}>
                 <span />
             </label>
 
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <svg xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <filter id="shadowed-goo">
                         <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />

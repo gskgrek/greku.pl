@@ -111,6 +111,9 @@
         align-items: center;
         transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
         cursor: pointer;
+        font-size: 0;
+        line-height: 0;
+        overflow: hidden;
     }
 
     &__content{
