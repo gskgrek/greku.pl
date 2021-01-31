@@ -12,6 +12,7 @@ module.exports = {
             options: {
                 assets: path.join(__dirname, 'src/assets'),
                 components: path.join(__dirname, 'src/components'),
+                hoc: path.join(__dirname, 'src/hoc'),
                 pages: path.join(__dirname, 'src/pages'),
                 sections: path.join(__dirname, 'src/sections'),
                 utils: path.join(__dirname, 'src/utils'),
@@ -76,6 +77,8 @@ module.exports = {
             resolve: `gatsby-transformer-remark`,
             options: {
                 plugins: [
+                    `gatsby-transformer-sharp`,
+                    `gatsby-plugin-sharp`,
                     {
                         resolve: `gatsby-remark-images`,
                         options: {

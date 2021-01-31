@@ -4,4 +4,16 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+// don't scroll the page when the user goes to the project url (we don't load the page and show the overlay instead)
+exports.shouldUpdateScroll = (data) => {
+    if (/^\/projects/.test(data.routerProps.location.pathname) && !!data.prevRouterProps) {
+        const scrollPosition = data.getSavedScrollPosition(data.prevRouterProps.location);
+        window.scrollTo({
+            left: 0,
+            top: scrollPosition[1],
+            behavior: 'auto',
+        });
+        return false;
+    }
+    return true;
+};

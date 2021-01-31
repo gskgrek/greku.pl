@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { scrollToElement } from 'utils/dom';
+
 import css from './circle-menu.module.scss';
 
 const circleMenu = () => {
@@ -11,22 +13,35 @@ const circleMenu = () => {
         }
     };
 
+    const handleItemClick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const href = e.target.getAttribute('href');
+        const id = href.replace('#', '');
+        scrollToElement(document.getElementById(id));
+
+        window.history.pushState({}, '', href);
+
+        return false;
+    };
+
     return (
         <nav className={css.circleMenu}>
             <input id="circle-menu-toggler" type="checkbox" onChange={togglerChangeHandler} value="1" />
             <ul className={[css.circleMenu__list, isContactActive ? css.circleMenu__list__showContent : ''].join(' ')}>
                 <li className={[css.circleMenu__item, css.circleMenu__itemGreen].join(' ')}>
-                    <a className={css.circleMenu__link} title="Home" aria-label="Home" href="http://google.pl">
+                    <a className={css.circleMenu__link} title="Home" aria-label="Home" href="/">
                         Home
                     </a>
                 </li>
                 <li className={[css.circleMenu__item, css.circleMenu__itemBlue].join(' ')}>
-                    <a className={css.circleMenu__link} title="Profile" aria-label="Profile" href="http://google.pl">
+                    <a className={css.circleMenu__link} title="Profile" aria-label="Profile" href="#profile" onClick={handleItemClick}>
                         Profile
                     </a>
                 </li>
                 <li className={[css.circleMenu__item, css.circleMenu__itemYellow].join(' ')}>
-                    <a className={css.circleMenu__link} title="Projects" aria-label="Projects" href="http://google.pl">
+                    <a className={css.circleMenu__link} title="Projects" aria-label="Projects" href="#projects" onClick={handleItemClick}>
                         Projects
                     </a>
                 </li>

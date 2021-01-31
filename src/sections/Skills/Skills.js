@@ -4,7 +4,7 @@ import css from './skils.module.scss';
 import Icon from '../../components/Icon/Icon';
 
 const skills = () => (
-    <section className={css.skills}>
+    <section id="profile" className={css.skills}>
         <div className={['container', css.container].join(' ')}>
             <h2>Skills</h2>
 

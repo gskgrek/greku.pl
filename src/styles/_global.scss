@@ -1,2 +1,8 @@
 @import "math";
 @import "variables";
+
+:global{
+    .noScroll{
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,126 @@
+.project{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 100;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    &.visible{
+        opacity: 1;
+    }
+
+    &__wrapper{
+        position: relative;
+        padding: 32px 16px;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+    }
+
+    &__backdrop{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 0;
+    }
+
+    &__content{
+        position: relative;
+        margin: auto;
+        flex: 0 1 1160px;
+        padding: 16px 100px;
+        background-color: $color-surface;
+        z-index: 10;
+        border-radius: 4px;
+        color: $color-on-surface;
+    }
+
+    &__close{
+        position: absolute;
+        top: 16px;
+        right: 30px;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        background: none;
+        border: 1px solid $color-primary;
+        border-radius: 50%;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+
+        &::before, &::after{
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            display: block;
+            width: 50%;
+            height: 1px;
+            background: $color-primary;
+            transition: box-shadow 0.2s ease-in-out;
+        }
+
+        &::before{
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        &::after{
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &:hover{
+            transform: scale(1.1);
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+
+            &::before, &::after{
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+            }
+        }
+    }
+
+    &__title{
+        display: flex;
+        margin-bottom: 8px;
+        height: 40px;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: left;
+        font-size: 3.2rem;
+    }
+
+    &__info{
+        margin-bottom: 16px;
+    }
+
+    &__description{
+        margin-bottom: 20px;
+    }
+
+    &__gallery{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        &__image{
+            width: 100%;
+            max-width: 960px;
+
+            &:not(:last-child){
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
