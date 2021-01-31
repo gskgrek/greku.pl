@@ -23,8 +23,10 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-sass',
             options: {
-                includePaths: ['./src/styles'],
-                data: `@import "./src/styles/global";`,
+                sassOptions: {
+                    includePaths: ['./src/styles'],
+                },
+                additionalData: `@import "./src/styles/global";`,
             },
         },
         {

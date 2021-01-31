@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 
 import css from './icon.module.scss';
 
-const icon = ({ className, type }) => {
-    return <div className={[className, css.icon, css[`icon${type.charAt(0).toUpperCase()}${type.slice(1)}`]].join(' ')} />;
-};
+const icon = ({ className, type }) => <div className={[className, css.icon, css[`icon${type.charAt(0).toUpperCase()}${type.slice(1)}`]].join(' ')} />;
 
 icon.propTypes = {
     type: PropTypes.string.isRequired,

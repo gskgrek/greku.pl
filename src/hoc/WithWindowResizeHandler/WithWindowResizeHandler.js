@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-const withWindowResizeHandler = WrappedComponent => {
-    return class component extends Component {
+const withWindowResizeHandler = (WrappedComponent) =>
+    class component extends Component {
         constructor(props) {
             super(props);
             this.state = {
@@ -36,6 +36,5 @@ const withWindowResizeHandler = WrappedComponent => {
             );
         }
     };
-};
 
 export default withWindowResizeHandler;

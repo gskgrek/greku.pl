@@ -21,7 +21,7 @@ function SliderPrevArrow(props) {
     return <button aria-label="Previous" className={[customClass, className].join(' ')} style={{ ...style }} onClick={onClick} type="button" />;
 }
 
-const projects = props => {
+const projects = (props) => {
     const { windowWidth } = props;
 
     const sliderSettings = {
@@ -71,9 +71,7 @@ const projects = props => {
                 }
             }
         }
-    `).allMarkdownRemark.edges.map(item => {
-        return <ProjectsItem key={item.node.frontmatter.id} data={item.node.frontmatter} />;
-    });
+    `).allMarkdownRemark.edges.map((item) => <ProjectsItem key={item.node.frontmatter.id} data={item.node.frontmatter} />);
 
     return (
         <section className={css.projects}>

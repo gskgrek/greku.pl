@@ -10,26 +10,24 @@ import Footer from '../sections/Footer/Footer';
 
 import './index.scss';
 
-const IndexPage = () => {
-    return (
-        <div className="app">
-            <CircleMenu />
+const IndexPage = () => (
+    <div className="app">
+        <CircleMenu />
 
-            <Header />
+        <Header />
 
-            <main>
-                <Projects />
+        <main>
+            <Projects />
 
-                <Skills />
+            <Skills />
 
-                <Experience />
+            <Experience />
 
-                <Education />
-            </main>
+            <Education />
+        </main>
 
-            <Footer />
-        </div>
-    );
-};
+        <Footer />
+    </div>
+);
 
 export default IndexPage;
