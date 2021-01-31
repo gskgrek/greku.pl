@@ -5,10 +5,16 @@ import css from './circle-menu.module.scss';
 const circleMenu = () => {
     const [isContactActive, setContactActive] = useState(false);
 
+    const togglerChangeHandler = (e) => {
+        if (!e.target.checked) {
+            setContactActive(false);
+        }
+    };
+
     return (
         <nav className={css.circleMenu}>
-            <input id="circle-menu-toggler" type="checkbox" />
-            <ul className={css.circleMenu__list}>
+            <input id="circle-menu-toggler" type="checkbox" onChange={togglerChangeHandler} value="1" />
+            <ul className={[css.circleMenu__list, isContactActive ? css.circleMenu__list__showContent : ''].join(' ')}>
                 <li className={[css.circleMenu__item, css.circleMenu__itemGreen].join(' ')}>
                     <a className={css.circleMenu__link} title="Home" aria-label="Home" href="http://google.pl">
                         Home
