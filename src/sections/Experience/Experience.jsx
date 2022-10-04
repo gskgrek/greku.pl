@@ -1,6 +1,6 @@
 import React from 'react';
 
-import css from './experience.module.scss';
+import * as css from './experience.module.scss';
 
 const experience = () => (
     <section className={css.experience}>

@@ -29,11 +29,7 @@ const withWindowResizeHandler = (WrappedComponent) =>
             const { width, height } = this.state;
             const { ...passThroughProps } = this.props;
 
-            return (
-                <>
-                    <WrappedComponent {...passThroughProps} windowWidth={width} windowHeight={height} />
-                </>
-            );
+            return (<WrappedComponent {...passThroughProps} windowWidth={width} windowHeight={height} />);
         }
     };
 

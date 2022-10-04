@@ -1,19 +1,20 @@
 import React from 'react';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Icon from '../../components/Icon/Icon';
 
-import css from './header.module.scss';
+import * as css from './header.module.scss';
 
 const header = () => {
     const avatar = useStaticQuery(graphql`
         query AvatarQuery {
             file(relativePath: { eq: "avatar.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 132, quality: 70) {
-                        ...GatsbyImageSharpFluid
-                    }
+                    gatsbyImageData(
+                        width: 132
+                        quality: 70
+                    )
                 }
             }
         }
@@ -30,7 +31,7 @@ const header = () => {
                 <Icon className={css.profile__icon} type="laravel" />
 
                 <div className={css.profile__avatar}>
-                    <Img fluid={avatar.file.childImageSharp.fluid} alt="Grzegorz Sieczkowski" />
+                    <GatsbyImage image={avatar.file.childImageSharp.gatsbyImageData} alt="Grzegorz Sieczkowski" />
                 </div>
 
                 <h1 className={css.profile__title}>Grzegorz Sieczkowski</h1>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { scrollToElement } from 'utils/dom';
 
-import css from './circle-menu.module.scss';
+import * as css from './circle-menu.module.scss';
 
 const circleMenu = () => {
     const [isContactActive, setContactActive] = useState(false);

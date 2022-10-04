@@ -8,7 +8,7 @@ import ProjectsItem from './ProjectsItem';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import css from './projects.module.scss';
+import * as css from './projects.module.scss';
 
 function SliderNextArrow(props) {
     const { customClass, className, style, onClick } = props;
@@ -61,9 +61,10 @@ const projects = (props) => {
                             thumb {
                                 publicURL
                                 childImageSharp {
-                                    fluid(maxWidth: 600, quality: 70) {
-                                        ...GatsbyImageSharpFluid
-                                    }
+                                    gatsbyImageData(
+                                        width: 600
+                                        quality: 70
+                                    )
                                 }
                             }
                         }
@@ -77,7 +78,7 @@ const projects = (props) => {
         <section id="projects" className={css.projects}>
             <h2>Projects</h2>
 
-            <Slider className={css.slider} {...sliderSettings}>
+            <Slider {...sliderSettings}>
                 {list}
             </Slider>
         </section>

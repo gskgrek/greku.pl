@@ -1,11 +1,16 @@
 {
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "requireConfigFile": false,
+        "babelOptions": {
+            "presets": ["@babel/preset-react"]
+         }
+    },
     "extends": [
         "airbnb",
         "eslint:recommended",
         "plugin:react/recommended",
-        "prettier",
-        "prettier/react"
+        "prettier"
     ],
     "globals": {
         "window": true,
@@ -15,7 +20,7 @@
         "import/resolver": {
             "node": {
                 "paths": ["./src"],
-                "extensions": [".js"]
+                "extensions": [".js", "jsx"]
             }
         }
     },
