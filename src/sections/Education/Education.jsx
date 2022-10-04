@@ -1,6 +1,6 @@
 import React from 'react';
 
-import css from './education.module.scss';
+import * as css from './education.module.scss';
 
 const education = () => (
     <section className={css.education}>

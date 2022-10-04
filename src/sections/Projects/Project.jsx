@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import * as PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
-import hastToHyperscript from 'hast-to-hyperscript';
+import { GatsbyImage } from "gatsby-plugin-image";
+import {toH} from 'hast-to-hyperscript'
 
 import { disableDocumentScroll, enableDocumentScroll } from '../../utils/dom';
 
-import css from './project.module.scss';
+import * as css from './project.module.scss';
 
 const Project = (props) => {
     const { slug } = props;
@@ -42,9 +42,10 @@ const Project = (props) => {
                                 id
                                 publicURL
                                 childImageSharp {
-                                    fluid(maxWidth: 1000, quality: 100) {
-                                        ...GatsbyImageSharpFluid_noBase64
-                                    }
+                                    gatsbyImageData(
+                                        width: 1000
+                                        quality: 100
+                                    )
                                 }
                             }
                         }
@@ -55,7 +56,7 @@ const Project = (props) => {
         }
     `).allMarkdownRemark.edges.filter((item) => item.node.frontmatter.slug === slug);
 
-    const projectDescription = hastToHyperscript(React.createElement, htmlAst);
+    const projectDescription = toH(React.createElement, htmlAst);
 
     const handleCloseClick = () => {
         setVisible(false);
@@ -91,7 +92,7 @@ const Project = (props) => {
                     <div className={css.project__description}>{projectDescription}</div>
                     <div className={css.project__gallery}>
                         {projectData.gallery.map((galleryItem) => (
-                            <Img key={galleryItem.id} fluid={galleryItem.childImageSharp.fluid} className={css.project__gallery__image} alt="" backgroundColor durationFadeIn={1000} />
+                            <GatsbyImage key={galleryItem.id} image={galleryItem.childImageSharp.gatsbyImageData} className={css.project__gallery__image} alt="" backgroundColor durationFadeIn={1000} />
                         ))}
                     </div>
                 </div>

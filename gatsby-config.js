@@ -1,13 +1,21 @@
 const path = require('path');
 
+const gatsbyRequiredRules = path.join(
+    process.cwd(),
+    "node_modules",
+    "gatsby",
+    "dist",
+    "utils",
+    "eslint-rules"
+);
+
 module.exports = {
     siteMetadata: {
         title: `Grzegorz Sieczkowski`,
         description: `Grzegorz Sieczkowski personal site`,
         author: `@gskgrek`,
     },
-    plugins: [
-        {
+    plugins: [{
             resolve: 'gatsby-plugin-root-import',
             options: {
                 assets: path.join(__dirname, 'src/assets'),
@@ -41,22 +49,16 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-eslint',
             options: {
-                test: /\.js$/,
-                exclude: /(node_modules|cache|public)/,
-                options: {
-                    emitWarning: true,
-                    failOnError: false,
-                },
+                rulePaths: [gatsbyRequiredRules],
+                extensions: ["js", "jsx", "ts", "tsx"],
+                exclude: ["node_modules", "cache", "public", ".cache", "bower_components"],
             },
-        },
-        {
-            resolve: 'gatsby-plugin-stylelint',
-            options: { files: ['**/*.js'] },
         },
 
         // images
-        `gatsby-transformer-sharp`,
+        `gatsby-plugin-image`,
         `gatsby-plugin-sharp`,
+        `gatsby-transformer-sharp`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -77,8 +79,9 @@ module.exports = {
             resolve: `gatsby-transformer-remark`,
             options: {
                 plugins: [
-                    `gatsby-transformer-sharp`,
+                    `gatsby-plugin-image`,
                     `gatsby-plugin-sharp`,
+                    `gatsby-transformer-sharp`,
                     {
                         resolve: `gatsby-remark-images`,
                         options: {
@@ -90,7 +93,6 @@ module.exports = {
         },
 
         // document head
-        `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
@@ -100,8 +102,6 @@ module.exports = {
                 background_color: `#FFFFFF`,
                 theme_color: `#FFFFFF`,
                 display: `minimal-ui`,
-                stripMetadata: true,
-                defaultQuality: 70,
                 icon: `src/assets/images/logo.png`, // This path is relative to the root of the site.
             },
         },

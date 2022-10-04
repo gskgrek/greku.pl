@@ -1,4 +1,4 @@
-import menuStyles from 'components/Navigation/CircleMenu/circle-menu.module.scss';
+import * as menuStyles from 'components/Navigation/CircleMenu/circle-menu.module.scss';
 
 const getScrollBarWidth = () => {
     const $el = document.createElement('div');

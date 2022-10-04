@@ -1,6 +1,6 @@
 import React from 'react';
 
-import css from './skils.module.scss';
+import * as css from './skils.module.scss';
 import Icon from '../../components/Icon/Icon';
 
 const skills = () => (

@@ -1,8 +1,8 @@
 import React from 'react';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 import { Link } from '@reach/router';
 
-import css from './projects.module.scss';
+import * as css from './projects.module.scss';
 
 const projectItem = (props) => {
     const { data } = props;
@@ -11,7 +11,7 @@ const projectItem = (props) => {
         <Link to={`/projects/${data.slug}`} key={data.id}>
             <div className={css.slider__item}>
                 <div>
-                    <Img fluid={data.thumb.childImageSharp.fluid} className={css.slider__thumb} alt={data.title} />
+                    <GatsbyImage image={data.thumb.childImageSharp.gatsbyImageData} className={css.slider__thumb} alt={data.title} />
                     <div className={css.slider__panel}>
                         <div className={css.slider__title}>{data.title}</div>
                         <div>
