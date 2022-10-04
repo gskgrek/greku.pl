@@ -1,7 +1,7 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
 
-const Error404 = (props) => {
+function Error404(props) {
     const {
         location: { pathname },
     } = props;
@@ -12,7 +12,7 @@ const Error404 = (props) => {
             <p>The requested URL {pathname} was not found on this server.</p>
         </>
     );
-};
+}
 
 Error404.propTypes = {
     location: PropTypes.shape({

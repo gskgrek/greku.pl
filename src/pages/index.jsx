@@ -1,19 +1,19 @@
 import React from 'react';
 import { Router } from '@reach/router';
 
-import CircleMenu from '../components/Navigation/CircleMenu/CircleMenu';
-import Header from '../sections/Header/Header';
-import Projects from '../sections/Projects/Projects';
-import Skills from '../sections/Skills/Skills';
-import Experience from '../sections/Experience/Experience';
-import Education from '../sections/Education/Education';
-import Footer from '../sections/Footer/Footer';
-import Project from '../sections/Projects/Project';
+import CircleMenu from '../components/Navigation/CircleMenu/CircleMenu.jsx';
+import Header from '../sections/Header/Header.jsx';
+import Projects from '../sections/Projects/Projects.jsx';
+import Skills from '../sections/Skills/Skills.jsx';
+import Experience from '../sections/Experience/Experience.jsx';
+import Education from '../sections/Education/Education.jsx';
+import Footer from '../sections/Footer/Footer.jsx';
+import Project from '../sections/Projects/Project.jsx';
 
 import './index.scss';
 
-const IndexPage = () => (
-    <div className="app">
+function IndexPage() {
+  return <div className="app">
         <CircleMenu />
 
         <Header />
@@ -34,6 +34,6 @@ const IndexPage = () => (
 
         <Footer />
     </div>
-);
+}
 
 export default IndexPage;

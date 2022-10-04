@@ -202,5 +202,22 @@
                 transform: translate3d(-50%, 0, 0) rotate(-45deg);
             }
         }
+        ~.circle-menu__list {
+            .circle-menu__item {
+                @for $i from 0 through 5 {
+                    &:nth-child( #{$i+1}) {
+                        right: (-60px * sin($i * 55deg - 210deg));
+                        bottom: (-60px * cos($i * 55deg - 210deg));
+                    }
+                    &:hover,
+                    &--active {
+                        &:nth-child( #{$i+1}) {
+                            right: (-5px - 60px * sin($i * 55deg - 210deg));
+                            bottom: (-5px - 60px * cos($i * 55deg - 210deg));
+                        }
+                    }
+                }
+            }
+        }
     }
 }
