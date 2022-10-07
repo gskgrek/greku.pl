@@ -11,7 +11,7 @@ const education = () => (
                 <div className={css.education__date}>2002-2008</div>
                 <div className={css.education__line} />
                 <div className={css.education__text}>
-                    <div className={css.education__title}>Politechnika Wrocławska</div>
+                    <div className={css.education__title}>Wrocław University of Science and Technology</div>
                     <p>
                         <b>Kierunek:</b> Fizyka
                         <br />
