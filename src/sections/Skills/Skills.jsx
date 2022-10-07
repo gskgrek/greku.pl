@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as css from './skils.module.scss';
-import Icon from '../../components/Icon/Icon';
+import Icon from '../../components/Icon/Icon.jsx';
 
 const skills = () => (
     <section id="profile" className={css.skills}>
@@ -22,7 +22,7 @@ const skills = () => (
 
             <ul className={css.set}>
                 <li>
-                    <Icon className={css.icon} type="react" /> 1 year of commercial experience
+                    <Icon className={css.icon} type="react" /> 3 years of commercial experience
                 </li>
             </ul>
 

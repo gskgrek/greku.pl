@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { scrollToElement } from 'utils/dom';
+import Icon from 'components/Icon/Icon.jsx';
 
 import * as css from './circle-menu.module.scss';
 
@@ -26,12 +27,17 @@ const circleMenu = () => {
         return false;
     };
 
+    const handleHomeClick = () => {
+        window.scrollTo(0, 0);
+        return true;
+    }
+
     return (
         <nav className={css.circleMenu}>
             <input id="circle-menu-toggler" type="checkbox" onChange={togglerChangeHandler} value="1" />
             <ul className={[css.circleMenu__list, isContactActive ? css.circleMenu__list__showContent : ''].join(' ')}>
                 <li className={[css.circleMenu__item, css.circleMenu__itemGreen].join(' ')}>
-                    <a className={css.circleMenu__link} title="Home" aria-label="Home" href="/">
+                    <a className={css.circleMenu__link} title="Home" aria-label="Home" href="/" onClick={handleHomeClick}>
                         Home
                     </a>
                 </li>
@@ -46,7 +52,16 @@ const circleMenu = () => {
                     </a>
                 </li>
                 <li className={[css.circleMenu__item, css.circleMenu__itemOrange, isContactActive ? css.circleMenu__itemActive : ''].join(' ')}>
-                    <div className={css.circleMenu__content}>Lorem ipsum</div>
+                    <div className={css.circleMenu__content}>
+                        <div className={css.circleMenu__contactItem}>
+                            <Icon className={css.circleMenu__contactIcon} type="github" />
+                            <a className={css.circleMenu__contactLink} href="https://github.com/gskgrek/greku.pl" rel="noreferrer" target="_blank">gskgrek</a>
+                        </div>
+                        <div className={css.circleMenu__contactItem}>
+                            <Icon className={css.circleMenu__contactIcon} type="linkedin" />
+                            <a className={css.circleMenu__contactLink} href="https://www.linkedin.com/in/grzegorz-sieczkowski-65418767/" rel="noreferrer" target="_blank">Grzegorz Sieczkowski</a>
+                        </div>
+                    </div>
                     <button type="button" title="Contact" aria-label="Contact" className={css.circleMenu__link} onClick={() => setContactActive(!isContactActive)} onKeyDown={() => null} />
                 </li>
             </ul>

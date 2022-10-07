@@ -34,4 +34,14 @@
         background-size: 62% auto;
     }
 
+    &--github{
+        background: #FFFFFF url('../../static/images/ico_github.svg') no-repeat center center;
+        background-size: 62% auto;
+    }
+
+    &--linkedin{
+        background: url('../../static/images/ico_linkedin.svg') no-repeat center center;
+        background-size: 62% auto;
+    }
+
 }

@@ -3,8 +3,8 @@ import * as PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import Slider from 'react-slick';
 
-import withWindowResizeHandler from 'hoc/WithWindowResizeHandler/WithWindowResizeHandler';
-import ProjectsItem from './ProjectsItem';
+import withWindowResizeHandler from 'hoc/WithWindowResizeHandler/WithWindowResizeHandler.jsx';
+import ProjectsItem from './ProjectsItem.jsx';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
