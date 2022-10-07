@@ -2,7 +2,7 @@ import React from 'react';
 import { GatsbyImage } from "gatsby-plugin-image";
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Icon from '../../components/Icon/Icon';
+import Icon from '../../components/Icon/Icon.jsx';
 
 import * as css from './header.module.scss';
 
